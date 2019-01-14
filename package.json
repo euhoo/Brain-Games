@@ -1,29 +1,31 @@
 {
   "name": "bg-euhoo",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "ffirst project on Hexlet: brain games",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
-   },
-   "files": [
+    "brain-games2": "dist/bin/brain-games.js",
+    "brain-games": "dist/index.js"
+  },
+  "files": [
     "dist"
   ],
   "keywords": [
     "brainGames",
     "hexlet",
     "myFirstPackage"
-    ],
+  ],
   "author": "Euhoo",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.2.3"
+    "@babel/preset-env": "^7.2.3",
+    "readline-sync": "^1.4.9"
   }
 }
