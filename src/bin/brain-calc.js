@@ -8,43 +8,43 @@ console.log();
 const name = nameRequest();
 console.log(`Hello, ${name}!`);
 console.log();
-let i = 0;
-for (i; i < 3; i += 1) {
-  const num = () => Math.floor(Math.random() * 3) + 1;
-  const firstNum = num();
-  const secondNum = num();
-  let m;
+let countOfGames = 0;
+for (countOfGames; countOfGames < 3; countOfGames += 1) {
+  const someRandomNumber = () => Math.floor(Math.random() * 3) + 1;
+  const firstNum = someRandomNumber();
+  const secondNum = someRandomNumber();
+  let operation;
   const choice = (symb) => {
     let result;
     switch (symb) {
       case 0:
-        m = '*';
+        operation = '*';
         result = firstNum * secondNum;
         break;
       case 1:
-        m = '+';
+        operation = '+';
         result = firstNum + secondNum;
         break;
       default:
-        m = '-';
+        operation = '-';
         result = firstNum - secondNum;
         break;
     }
     return result;
   };
-  const total = choice(num());
-  console.log(`Question: ${firstNum}${m}${secondNum}`);
+  const total = choice(someRandomNumber());
+  console.log(`Question: ${firstNum}${operation}${secondNum}`);
   const answer = Number(readlineSync.question('Your answer: '));
   if (answer === total) {
     console.log('Correct!');
   } else {
-    console.log(`Question: ${firstNum}${m}${secondNum}`);
+    console.log(`Question: ${firstNum}${operation}${secondNum}`);
     console.log(`Your answer: ${answer}`);
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${total}'`);
     console.log(`Let's try again, ${name}!`);
     break;
   }
 }
-if (i === 3) {
+if (countOfGames === 3) {
   console.log(`Congratulations, ${name}!`);
 }
