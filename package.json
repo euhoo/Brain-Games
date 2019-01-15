@@ -1,6 +1,6 @@
 {
   "name": "bg-euhoo",
-  "version": "1.2.9",
+  "version": "1.4.3",
   "description": "First project on Hexlet: brain games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
     },
   "files": [
     "dist"
