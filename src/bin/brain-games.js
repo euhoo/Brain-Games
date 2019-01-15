@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 import nameRequest from '..';
 
-nameRequest();
+console.log(nameRequest());
