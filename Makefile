@@ -7,7 +7,10 @@ lint:
 start:
 	npx babel-node -- src/bin/brain-games.js
 
-s:
+even:
+	npx babel-node -- src/bin/brain-even.js
+
+calc:
 	npx babel-node -- src/bin/brain-calc.js
 
 publish:

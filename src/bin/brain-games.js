@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import nameRequest from '..';
+import { welcome, askName } from '..';
 
-console.log('Welcome to the Brain Games!');
-console.log();
-console.log(`Hello, ${nameRequest()}`);
+welcome();
+askName();

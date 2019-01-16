@@ -1,50 +1,64 @@
 #!/usr/bin/env node
-import nameRequest from '..';
+import {
+  askName, welcome, makeRandomNumber, ifIncorrect,
+} from '..';
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
+welcome();
+const name = askName();
 console.log('What is the result of the expression?');
 console.log();
-const name = nameRequest();
-console.log(`Hello, ${name}!`);
-console.log();
-let countOfGames = 0;
-for (countOfGames; countOfGames < 3; countOfGames += 1) {
-  const someRandomNumber = () => Math.floor(Math.random() * 3) + 1;
-  const firstNum = someRandomNumber();
-  const secondNum = someRandomNumber();
+// used in: calc
+const makeOperand = (numberOfOperand) => {
   let operation;
-  const choice = (symb) => {
-    let result;
-    switch (symb) {
-      case 0:
-        operation = '*';
-        result = firstNum * secondNum;
-        break;
-      case 1:
-        operation = '+';
-        result = firstNum + secondNum;
-        break;
-      default:
-        operation = '-';
-        result = firstNum - secondNum;
-        break;
-    }
-    return result;
-  };
-  const total = choice(someRandomNumber());
-  console.log(`Question: ${firstNum}${operation}${secondNum}`);
-  const answer = Number(readlineSync.question('Your answer: '));
-  if (answer === total) {
-    console.log('Correct!');
-  } else {
-    console.log(`Question: ${firstNum}${operation}${secondNum}`);
-    console.log(`Your answer: ${answer}`);
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${total}'`);
-    console.log(`Let's try again, ${name}!`);
-    break;
+  switch (numberOfOperand) {
+    case 0:
+      operation = '*';
+      break;
+    case 1:
+      operation = '+';
+      break;
+    default:
+      operation = '-';
+      break;
   }
-}
-if (countOfGames === 3) {
-  console.log(`Congratulations, ${name}!`);
-}
+  return operation;
+};
+
+const calculateSum = (operand, fNum, sNum) => {
+  let result;
+  switch (operand) {
+    case 0:
+      result = fNum * sNum;
+      break;
+    case 1:
+      result = fNum + sNum;
+      break;
+    default:
+      result = fNum - sNum;
+      break;
+  }
+  return result;
+};
+const gameCalc = () => {
+  for (let i = 0; i < 3; i += 1) {
+    const firstNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
+    const secondNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
+    const operand = makeOperand(makeRandomNumber(1, 3));
+    const resultOfOperation = calculateSum(operand, firstNum, secondNum);
+    console.log(`Question: ${firstNum}${operand}${secondNum}`);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
+    if (userAnswer === resultOfOperation) {
+      console.log('Correct!');
+    } else {
+      const ifLose = () => {
+        console.log(`Question: ${firstNum}${operand}${secondNum}`);
+        console.log(`Your answer: ${userAnswer}`);
+        ifIncorrect(userAnswer, resultOfOperation, name);
+      };
+      return ifLose();
+    }
+  }
+  return console.log(`Congratulations, ${name}!`);
+};
+gameCalc();
