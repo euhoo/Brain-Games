@@ -1,46 +1,46 @@
-#!/usr/bin/env node
 import {
   askName, welcome, makeRandomNumber, ifIncorrect,
 } from '..';
 import readlineSync from 'readline-sync';
 
-welcome();
-const name = askName();
-console.log('What is the result of the expression?');
-console.log();
-// used in: calc
-const makeOperand = (numberOfOperand) => {
-  let operation;
-  switch (numberOfOperand) {
-    case 0:
-      operation = '*';
-      break;
-    case 1:
-      operation = '+';
-      break;
-    default:
-      operation = '-';
-      break;
-  }
-  return operation;
-};
 
-const calculateSum = (operand, fNum, sNum) => {
-  let result;
-  switch (operand) {
-    case '*':
-      result = fNum * sNum;
-      break;
-    case '+':
-      result = fNum + sNum;
-      break;
-    default:
-      result = fNum - sNum;
-      break;
-  }
-  return result;
-};
 const gameCalc = () => {
+  welcome();
+  const name = askName();
+  console.log('What is the result of the expression?');
+  console.log();
+  // used in: calc
+  const makeOperand = (numberOfOperand) => {
+    let operation;
+    switch (numberOfOperand) {
+      case 0:
+        operation = '*';
+        break;
+      case 1:
+        operation = '+';
+        break;
+      default:
+        operation = '-';
+        break;
+    }
+    return operation;
+  };
+
+  const calculateSum = (operand, fNum, sNum) => {
+    let result;
+    switch (operand) {
+      case '*':
+        result = fNum * sNum;
+        break;
+      case '+':
+        result = fNum + sNum;
+        break;
+      default:
+        result = fNum - sNum;
+        break;
+    }
+    return result;
+  };
   for (let i = 0; i < 3; i += 1) {
     const firstNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
     const secondNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
@@ -61,4 +61,4 @@ const gameCalc = () => {
   }
   return console.log(`Congratulations, ${name}!`);
 };
-gameCalc();
+export default gameCalc();
