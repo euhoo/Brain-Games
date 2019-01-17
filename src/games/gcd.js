@@ -1,41 +1,27 @@
-import {
-  askName, welcome, makeRandomNumber, ifIncorrect,
-} from '..';
-import readlineSync from 'readline-sync';
+import { game, makeRandomNumber } from '..';
 
-const gcd = () => {
-  const findGreatestCommonDivision = (a, b) => {
-    let min = a;
-    let max = b;
-    let result = 0;
-    if (min > max) [min, max] = [max, min];
-    for (let i = max; i > 0; i -= 1) {
-      if ((max % i === 0) && (min % i === 0)) {
-        result = i;
-        break;
-      }
-    }
-    return result;
-  };
+const ruleOfGcd = 'Find the greatest common divisor of given numbers.';
 
-  welcome();
-  const name = askName();
-  console.log('Find the greatest common divisor of given numbers.');
-  console.log();
-
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = makeRandomNumber(1, 25); // random from 1 to 25 to make game more simpliest
-    const secondNum = makeRandomNumber(1, 25); // random from 1 to 25 to make game more simpliest
-    console.log(`Question: ${firstNum} ${secondNum}`);
-    const userAnswer = Number(readlineSync.question('Your answer: '));
-    const resultOfOperation = findGreatestCommonDivision(firstNum, secondNum);
-
-    if (userAnswer === resultOfOperation) {
-      console.log('Correct!');
-    } else {
-      return ifIncorrect(userAnswer, resultOfOperation, name);
+const findGreatestCommonDivision = (a, b) => {
+  let min = a;
+  let max = b;
+  let result = 0;
+  if (min > max) [min, max] = [max, min];
+  for (let i = max; i > 0; i -= 1) {
+    if ((max % i === 0) && (min % i === 0)) {
+      result = i;
+      break;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  return result;
 };
+const logicOfGcd = () => {
+  const firstNumber = makeRandomNumber(1, 25);
+  const secondNumber = makeRandomNumber(1, 25);
+  const question = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = findGreatestCommonDivision(firstNumber, secondNumber);
+  const arr = [question, correctAnswer];
+  return arr;
+};
+const gcd = () => game(logicOfGcd, ruleOfGcd);
 export default gcd;

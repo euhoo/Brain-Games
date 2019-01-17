@@ -1,7 +1,6 @@
-import { welcome, askName } from '..';
+import { askName } from '..';
 
 const brain = () => {
-  welcome();
   askName();
 };
 export default brain;

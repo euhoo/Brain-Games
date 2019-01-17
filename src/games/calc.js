@@ -1,57 +1,51 @@
 import {
-  askName, welcome, makeRandomNumber, ifIncorrect,
+  game,
+  makeRandomNumber,
 } from '..';
-import readlineSync from 'readline-sync';
 
-const calc = () => {
-  welcome();
-  const name = askName();
-  console.log('What is the result of the expression?');
-  console.log();
-  const makeOperand = (numberOfOperand) => {
-    let operation;
-    switch (numberOfOperand) {
-      case 0:
-        operation = '*';
-        break;
-      case 1:
-        operation = '+';
-        break;
-      default:
-        operation = '-';
-        break;
-    }
-    return operation;
-  };
-
-  const calculateSum = (operand, fNum, sNum) => {
-    let result;
-    switch (operand) {
-      case '*':
-        result = fNum * sNum;
-        break;
-      case '+':
-        result = fNum + sNum;
-        break;
-      default:
-        result = fNum - sNum;
-        break;
-    }
-    return result;
-  };
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
-    const secondNum = makeRandomNumber(1, 10); // random from 1 to 10 to make game more simpliest
-    const operand = makeOperand(makeRandomNumber(0, 3));
-    const resultOfOperation = calculateSum(operand, firstNum, secondNum);
-    console.log(`Question: ${firstNum}${operand}${secondNum}`);
-    const userAnswer = Number(readlineSync.question('Your answer: '));
-    if (userAnswer === resultOfOperation) {
-      console.log('Correct!');
-    } else {
-      return ifIncorrect(userAnswer, resultOfOperation, name);
-    }
+const ruleOfCalc = ('What is the result of the expression?');
+const makeOperand = (numberOfOperand) => {
+  let operation;
+  switch (numberOfOperand) {
+    case 0:
+      operation = '*';
+      break;
+    case 1:
+      operation = '+';
+      break;
+    default:
+      operation = '-';
+      break;
   }
-  return console.log(`Congratulations, ${name}!`);
+  return operation;
+};
+
+const calculateSum = (operand, fNum, sNum) => {
+  let result;
+  switch (operand) {
+    case '*':
+      result = fNum * sNum;
+      break;
+    case '+':
+      result = fNum + sNum;
+      break;
+    default:
+      result = fNum - sNum;
+      break;
+  }
+  return result;
+};
+
+const logicOfCalc = () => {
+  const firstNumber = makeRandomNumber(1, 25);
+  const secondNumber = makeRandomNumber(1, 25);
+  const operand = makeOperand(makeRandomNumber(0, 3));
+  const question = `${firstNumber}${operand}${secondNumber}`;
+  const correctAnswer = calculateSum(operand, firstNumber, secondNumber);
+  const arr = [question, correctAnswer];
+  return arr;
+};
+const calc = () => {
+  game(logicOfCalc, ruleOfCalc);
 };
 export default calc;
