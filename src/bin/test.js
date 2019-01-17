@@ -59,4 +59,4 @@ const calc = () => {
   }
   return console.log(`Congratulations, ${name}!`);
 };
-export default calc;
+calc();

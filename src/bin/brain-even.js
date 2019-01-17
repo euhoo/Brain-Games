@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import {
-  askName, welcome, makeRandomNumber, makeCorrectAnswer, ifIncorrect,
-} from '..';
+import even from '../games/even';
 
-gameEven();
+even();

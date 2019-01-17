@@ -1,5 +1,7 @@
-#!/usr/bin/env node
 import { welcome, askName } from '..';
 
-welcome();
-askName();
+const brain = () => {
+  welcome();
+  askName();
+};
+export default brain;

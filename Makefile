@@ -13,5 +13,7 @@ even:
 calc:
 	npx babel-node -- src/bin/brain-calc.js
 
+test:
+	npx babel-node -- src/bin/test.js
 publish:
 	npm publish
