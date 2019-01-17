@@ -3,3 +3,4 @@
 [![Build Status](https://travis-ci.org/euhoo/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/euhoo/project-lvl1-s412)
 [![asciicast](https://asciinema.org/a/PBIhv9h6Qwg7tu9s1iQC5kvLb.svg)](https://asciinema.org/a/PBIhv9h6Qwg7tu9s1iQC5kvLb)
 [![asciicast](https://asciinema.org/a/oLjuFHHnHhwpeJl2ZsVeQWBvJ.svg)](https://asciinema.org/a/oLjuFHHnHhwpeJl2ZsVeQWBvJ)
+[![asciicast](https://asciinema.org/a/Zd6j5Bsst2bf8daeGqdOzBcK4.svg)](https://asciinema.org/a/Zd6j5Bsst2bf8daeGqdOzBcK4)
