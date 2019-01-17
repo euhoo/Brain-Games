@@ -14,6 +14,10 @@ calc:
 	npx babel-node -- src/bin/brain-calc.js
 
 test:
-	npx babel-node -- src/bin/test.js
+	npx babel-node -- src/games/test.js
+
+gcd:
+	npx babel-node -- src/bin/brain-gcd.js
+	
 publish:
 	npm publish

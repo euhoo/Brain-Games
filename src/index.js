@@ -15,11 +15,6 @@ export const askName = () => {
   return name;
 };
 
-// used in: even,calc
-export const isCongratulations = (flag, name) => {
-  if (flag === true) console.log(`Congratulations, ${name}!`);
-};
-
 // used in: even
 export const isEven = number => (number % 2 === 0);
 

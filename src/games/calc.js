@@ -49,12 +49,7 @@ const calc = () => {
     if (userAnswer === resultOfOperation) {
       console.log('Correct!');
     } else {
-      const ifLose = () => {
-        console.log(`Question: ${firstNum}${operand}${secondNum}`);
-        console.log(`Your answer: ${userAnswer}`);
-        ifIncorrect(userAnswer, resultOfOperation, name);
-      };
-      return ifLose();
+      return ifIncorrect(userAnswer, resultOfOperation, name);
     }
   }
   return console.log(`Congratulations, ${name}!`);
