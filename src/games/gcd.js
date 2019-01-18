@@ -1,21 +1,21 @@
 import { game, makeRandomNumber } from '..';
 
-const ruleOfGcd = 'Find the greatest common divisor of given numbers.';
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const findGreatestCommonDivision = (a, b) => {
   let min = a;
   let max = b;
   let result = 0;
   if (min > max) [min, max] = [max, min];
-  for (let i = max; i > 0; i -= 1) {
-    if ((max % i === 0) && (min % i === 0)) {
-      result = i;
+  for (let division = max; division > 0; division -= 1) {
+    if ((max % division === 0) && (min % division === 0)) {
+      result = division;
       break;
     }
   }
   return result;
 };
-const logicOfGcd = () => {
+const logic = () => {
   const firstNumber = makeRandomNumber(1, 25);
   const secondNumber = makeRandomNumber(1, 25);
   const question = `${firstNumber} ${secondNumber}`;
@@ -23,5 +23,5 @@ const logicOfGcd = () => {
   const arr = [question, correctAnswer];
   return arr;
 };
-const gcd = () => game(logicOfGcd, ruleOfGcd);
-export default gcd;
+const play = () => game(logic, rule);
+export default play;

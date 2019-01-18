@@ -3,7 +3,7 @@ import {
   makeRandomNumber,
 } from '..';
 
-const ruleOfCalc = ('What is the result of the expression?');
+const rule = ('What is the result of the expression?');
 const makeOperand = (numberOfOperand) => {
   let operation;
   switch (numberOfOperand) {
@@ -36,7 +36,7 @@ const calculateSum = (operand, fNum, sNum) => {
   return result;
 };
 
-const logicOfCalc = () => {
+const logic = () => {
   const firstNumber = makeRandomNumber(1, 25);
   const secondNumber = makeRandomNumber(1, 25);
   const operand = makeOperand(makeRandomNumber(0, 3));
@@ -45,7 +45,5 @@ const logicOfCalc = () => {
   const arr = [question, correctAnswer];
   return arr;
 };
-const calc = () => {
-  game(logicOfCalc, ruleOfCalc);
-};
-export default calc;
+const play = () => game(logic, rule);
+export default play;
