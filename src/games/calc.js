@@ -20,8 +20,8 @@ const calculateSum = (numberOfOperand, fNum, sNum) => {
       result = fNum - sNum;
       break;
   }
-  const meansOfFunction = [result, operation];
-  return meansOfFunction;
+  const means = [result, operation];
+  return means;
 };
 
 const logic = () => {

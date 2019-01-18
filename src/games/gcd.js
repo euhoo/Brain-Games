@@ -2,12 +2,13 @@ import game from '..';
 import makeRandomNumber from '../utils';
 
 const rule = 'Find the greatest common divisor of given numbers.';
+const smallestDivision = 1;
 
 const findGreatestCommonDivision = (a, b) => {
   const min = Math.min(a, b);
   const max = Math.max(a, b);
   let result = 0;
-  for (let division = max; division > 0; division -= 1) {
+  for (let division = max; division >= smallestDivision; division -= 1) {
     if ((max % division === 0) && (min % division === 0)) {
       result = division;
       break;
@@ -20,7 +21,7 @@ const logic = () => {
   const secondNumber = makeRandomNumber(1, 25);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = findGreatestCommonDivision(firstNumber, secondNumber);
-  const meansOfFunction = [question, correctAnswer];
-  return meansOfFunction;
+  const means = [question, correctAnswer];
+  return means;
 };
 export default () => game(logic, rule);

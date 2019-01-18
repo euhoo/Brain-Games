@@ -18,7 +18,7 @@ const logic = () => {
   const indexOfCorrectAnswer = makeRandomNumber(0, 9);
   const correctAnswer = firstElement + (step * indexOfCorrectAnswer);
   const question = makeRowOfNumbers(firstElement, step, indexOfCorrectAnswer);
-  const meansOfFunction = [question, correctAnswer];
-  return meansOfFunction;
+  const means = [question, correctAnswer];
+  return means;
 };
 export default () => game(logic, rule);
