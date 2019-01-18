@@ -1,7 +1,5 @@
-import {
-  game,
-  makeRandomNumber,
-} from '..';
+import game from '..';
+import makeRandomNumber from '../utils';
 
 const rule = ('What is the result of the expression?');
 

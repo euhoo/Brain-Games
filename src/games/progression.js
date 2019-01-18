@@ -1,12 +1,13 @@
-import { game, makeRandomNumber } from '..';
+import game from '..';
+import makeRandomNumber from '../utils';
 
 const rule = 'What number is missing in the progression?';
 const countOfGames = 10;
 
-const makeRowOfNumbers = (min, step, indexOfCorrectanswer) => {
-  let question = '';
+const makeRowOfNumbers = (min, step, indexOfCorrectAnswer) => {
+  let question = ''; // сразу обозначаю,что это строка
   for (let count = 0; count < countOfGames; count += 1) {
-    question += (min + step * count === min + (step * indexOfCorrectanswer)) ? '.. ' : `${min + step * count} `;
+    question += (min + step * count === min + (step * indexOfCorrectAnswer)) ? '.. ' : `${min + step * count} `;
   }
   return question;
 };
@@ -20,5 +21,4 @@ const logic = () => {
   const meansOfFunction = [question, correctAnswer];
   return meansOfFunction;
 };
-
 export default () => game(logic, rule);

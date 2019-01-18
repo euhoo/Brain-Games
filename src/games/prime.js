@@ -1,4 +1,5 @@
-import { game, makeRandomNumber } from '..';
+import game from '..';
+import makeRandomNumber from '../utils';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const smallestPrime = 1;

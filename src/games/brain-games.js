@@ -7,5 +7,4 @@ const askName = () => {
   console.log();
   return name;
 };
-
 export default () => askName();

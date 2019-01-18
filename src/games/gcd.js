@@ -1,4 +1,5 @@
-import { game, makeRandomNumber } from '..';
+import game from '..';
+import makeRandomNumber from '../utils';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
