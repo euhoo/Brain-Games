@@ -3,16 +3,17 @@ import game from '..';
 import makeRandomNumber from '../utils';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const smallestPrime = 1;
+const smallestPrime = 2;
+const notPrime = 1;
 
 const isPrime = (question) => {
   let correctAnswer = 'yes';
-  if (question === 1) {
+  if (question === notPrime) {
     correctAnswer = 'no';
+    return correctAnswer;
   }
-  for (let i = question - 1; i > smallestPrime; i -= 1) {
-    if (question < 4) break;
-    else if (question % i === 0) {
+  for (let i = question - 1; i > smallestPrime - 1; i -= 1) {
+    if (question % i === 0) {
       correctAnswer = 'no';
       break;
     }
@@ -21,7 +22,7 @@ const isPrime = (question) => {
 };
 
 const logic = () => {
-  const question = makeRandomNumber(1, 1);
+  const question = makeRandomNumber(1, 3);
   const correctAnswer = isPrime(question);
   const means = [question, correctAnswer];
   return means;
