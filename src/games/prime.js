@@ -4,11 +4,10 @@ import makeRandomNumber from '../utils';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const smallestPrime = 2;
-const notPrime = 1;
 
 const isPrime = (question) => {
   let correctAnswer = 'yes';
-  if (question === notPrime) {
+  if (question < smallestPrime) {
     correctAnswer = 'no';
     return correctAnswer;
   }
@@ -22,7 +21,7 @@ const isPrime = (question) => {
 };
 
 const logic = () => {
-  const question = makeRandomNumber(1, 3);
+  const question = makeRandomNumber(1, 90);
   const correctAnswer = isPrime(question);
   const means = [question, correctAnswer];
   return means;
