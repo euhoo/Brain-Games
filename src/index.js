@@ -1,12 +1,5 @@
 import readlineSync from 'readline-sync';
-
-const askName = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May i have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log();
-  return name;
-};
+import askName from './games/brain-games';
 
 const ifIncorrect = (answer, correctAnswer, name) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
