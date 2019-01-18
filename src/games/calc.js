@@ -4,46 +4,37 @@ import {
 } from '..';
 
 const rule = ('What is the result of the expression?');
-const makeOperand = (numberOfOperand) => {
+
+const calculateSum = (numberOfOperand, fNum, sNum) => {
   let operation;
+  let result;
   switch (numberOfOperand) {
     case 0:
       operation = '*';
+      result = fNum * sNum;
       break;
     case 1:
       operation = '+';
-      break;
-    default:
-      operation = '-';
-      break;
-  }
-  return operation;
-};
-
-const calculateSum = (operand, fNum, sNum) => {
-  let result;
-  switch (operand) {
-    case '*':
-      result = fNum * sNum;
-      break;
-    case '+':
       result = fNum + sNum;
       break;
     default:
+      operation = '-';
       result = fNum - sNum;
       break;
   }
-  return result;
+  const meansOfFunction = [result, operation];
+  return meansOfFunction;
 };
 
 const logic = () => {
   const firstNumber = makeRandomNumber(1, 25);
   const secondNumber = makeRandomNumber(1, 25);
-  const operand = makeOperand(makeRandomNumber(0, 3));
-  const question = `${firstNumber}${operand}${secondNumber}`;
-  const correctAnswer = calculateSum(operand, firstNumber, secondNumber);
-  const arr = [question, correctAnswer];
-  return arr;
+  const operand = makeRandomNumber(0, 3);
+  const means = calculateSum(operand, firstNumber, secondNumber);
+  const operation = means[1];
+  const question = `${firstNumber}${operation}${secondNumber}`;
+  const correctAnswer = means[0];
+  const meansOfFunction = [question, correctAnswer];
+  return meansOfFunction;
 };
-const play = () => game(logic, rule);
-export default play;
+export default () => game(logic, rule);

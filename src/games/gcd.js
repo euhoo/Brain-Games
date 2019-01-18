@@ -3,10 +3,9 @@ import { game, makeRandomNumber } from '..';
 const rule = 'Find the greatest common divisor of given numbers.';
 
 const findGreatestCommonDivision = (a, b) => {
-  let min = a;
-  let max = b;
+  const min = Math.min(a, b);
+  const max = Math.max(a, b);
   let result = 0;
-  if (min > max) [min, max] = [max, min];
   for (let division = max; division > 0; division -= 1) {
     if ((max % division === 0) && (min % division === 0)) {
       result = division;
@@ -20,8 +19,7 @@ const logic = () => {
   const secondNumber = makeRandomNumber(1, 25);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = findGreatestCommonDivision(firstNumber, secondNumber);
-  const arr = [question, correctAnswer];
-  return arr;
+  const meansOfFunction = [question, correctAnswer];
+  return meansOfFunction;
 };
-const play = () => game(logic, rule);
-export default play;
+export default () => game(logic, rule);
