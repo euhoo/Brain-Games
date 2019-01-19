@@ -31,7 +31,7 @@ const logic = () => {
   const means = calculateSum(operand, firstNumber, secondNumber);
   const operation = means[1];
   const question = `${firstNumber}${operation}${secondNumber}`;
-  const correctAnswer = means[0];
+  const correctAnswer = String(means[0]);
   const meansOfFunction = [question, correctAnswer];
   return meansOfFunction;
 };

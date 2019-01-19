@@ -2,9 +2,9 @@ import game from '..';
 import makeRandomNumber from '../utils';
 
 const rule = 'Find the greatest common divisor of given numbers.';
-const smallestDivision = 1;
 
 const findGreatestCommonDivision = (a, b) => {
+  const smallestDivision = 1;
   const min = Math.min(a, b);
   const max = Math.max(a, b);
   let result = 0;
@@ -20,7 +20,7 @@ const logic = () => {
   const firstNumber = makeRandomNumber(1, 25);
   const secondNumber = makeRandomNumber(1, 25);
   const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = findGreatestCommonDivision(firstNumber, secondNumber);
+  const correctAnswer = String(findGreatestCommonDivision(firstNumber, secondNumber));
   const means = [question, correctAnswer];
   return means;
 };

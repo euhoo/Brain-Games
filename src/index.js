@@ -16,9 +16,9 @@ export default (logicOfGame, ruleOfGame) => {
     const means = logicOfGame();
     // первое значение-вопрос(числовое значение(я)),второе-результат
     const question = means[0];
-    const correctAnswer = String(means[1]); // привожу к строке для корректного сравнения
+    const correctAnswer = means[1];
     console.log(`Question: ${question}`);
-    const answer = String(readlineSync.question('Your answer: ')); // привожу к строке для корректного сравнения
+    const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
