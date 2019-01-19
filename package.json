@@ -1,6 +1,6 @@
 {
   "name": "bg-euhoo",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "description": "First project on Hexlet: brain games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
