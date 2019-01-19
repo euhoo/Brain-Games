@@ -20,7 +20,6 @@ const isPrime = (question) => {
 const logic = () => {
   const question = makeRandomNumber(1, 99);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  const means = [question, correctAnswer];
-  return means;
+  return [question, correctAnswer];
 };
 export default () => game(logic, rule);

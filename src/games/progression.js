@@ -18,7 +18,6 @@ const logic = () => {
   const indexOfCorrectAnswer = makeRandomNumber(0, lengthOfProgressionsRow - 1);
   const correctAnswer = String(firstElement + (step * indexOfCorrectAnswer));
   const question = makeRowOfNumbers(firstElement, step, indexOfCorrectAnswer);
-  const means = [question, correctAnswer];
-  return means;
+  return [question, correctAnswer];
 };
 export default () => game(logic, rule);

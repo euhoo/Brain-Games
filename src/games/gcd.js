@@ -21,7 +21,6 @@ const logic = () => {
   const secondNumber = makeRandomNumber(1, 25);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = String(findGreatestCommonDivision(firstNumber, secondNumber));
-  const means = [question, correctAnswer];
-  return means;
+  return [question, correctAnswer];
 };
 export default () => game(logic, rule);

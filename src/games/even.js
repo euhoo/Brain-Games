@@ -7,7 +7,6 @@ const isEven = number => (number % 2 === 0);
 const logic = () => {
   const question = makeRandomNumber(1, 10);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
-  const means = [question, correctAnswer];
-  return means;
+  return [question, correctAnswer];
 };
 export default () => game(logic, rule);

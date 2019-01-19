@@ -20,19 +20,16 @@ const calculateSum = (numberOfOperand, fNum, sNum) => {
       result = fNum - sNum;
       break;
   }
-  const means = [result, operation];
-  return means;
+  result = String(result);
+  return [result, operation];
 };
 
 const logic = () => {
   const firstNumber = makeRandomNumber(1, 25);
   const secondNumber = makeRandomNumber(1, 25);
   const operand = makeRandomNumber(0, 3);
-  const means = calculateSum(operand, firstNumber, secondNumber);
-  const operation = means[1];
+  const [correctAnswer, operation] = calculateSum(operand, firstNumber, secondNumber);
   const question = `${firstNumber}${operation}${secondNumber}`;
-  const correctAnswer = String(means[0]);
-  const meansOfFunction = [question, correctAnswer];
-  return meansOfFunction;
+  return [question, correctAnswer];
 };
 export default () => game(logic, rule);

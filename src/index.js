@@ -13,10 +13,9 @@ export default (logicOfGame, ruleOfGame) => {
   console.log(ruleOfGame);
   console.log();
   for (let currentNumOfGame = 0; currentNumOfGame < totalNumberOfGames; currentNumOfGame += 1) {
-    const means = logicOfGame();
+    const [question, correctAnswer] = logicOfGame();
     // первое значение-вопрос(числовое значение(я)),второе-результат
-    const question = means[0];
-    const correctAnswer = means[1];
+
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
