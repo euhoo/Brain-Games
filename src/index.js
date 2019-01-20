@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 import askName from './games/brain-games';
 
-const ifIncorrect = (answer, correctAnswer, name) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  console.log(`Let's try again, ${name}!`);
-};
 const totalNumberOfGames = 3;
 
 export default (logicOfGame, ruleOfGame) => {
@@ -21,7 +17,8 @@ export default (logicOfGame, ruleOfGame) => {
     if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
-      ifIncorrect(answer, correctAnswer, name);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
